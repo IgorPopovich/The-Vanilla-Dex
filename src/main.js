@@ -285,6 +285,7 @@ async function openPokemonModal(pokemonId) {
       favBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         toggleFavorite(pokemonId);
+        refreshCardFavoriteStates(); // Update hearts on gallery cards immediately.
         // Re-render modal to update heart.
         openPokemonModal(pokemonId);
       });
