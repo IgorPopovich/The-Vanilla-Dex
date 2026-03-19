@@ -25,7 +25,7 @@ const metaLineEl = document.getElementById('metaLine');
 const searchEl = document.getElementById('search');
 const typeFilterEl = document.getElementById('typeFilter');
 const favoritesOnlyEl = document.getElementById('favoritesOnly');
-const themeToggleEl = document.getElementById('themeToggle');
+const themeSelectEl = document.getElementById('themeSelect');
 
 const modalOverlayEl = document.getElementById('modalOverlay');
 const modalContentEl = document.getElementById('modalContent');
@@ -99,18 +99,16 @@ function applyTheme(theme) {
 
 function initTheme() {
   const saved = localStorage.getItem(THEME_KEY);
-  if (saved === 'dark' || saved === 'light') {
-    applyTheme(saved);
-    return;
-  }
-  applyTheme(isDarkThemePreferred() ? 'dark' : 'light');
+  const theme =
+    saved === 'dark' || saved === 'light' ? saved : isDarkThemePreferred() ? 'dark' : 'light';
+  setTheme(theme);
 }
 
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'light';
-  const next = current === 'dark' ? 'light' : 'dark';
-  applyTheme(next);
-  localStorage.setItem(THEME_KEY, next);
+function setTheme(theme) {
+  const t = theme === 'dark' ? 'dark' : 'light';
+  applyTheme(t);
+  localStorage.setItem(THEME_KEY, t);
+  if (themeSelectEl) themeSelectEl.value = t;
 }
 
 function setMetaLine() {
@@ -342,7 +340,9 @@ async function init() {
   emptyStateEl.hidden = true;
   setMetaLine();
 
-  themeToggleEl.addEventListener('click', () => toggleTheme());
+  if (themeSelectEl) {
+    themeSelectEl.addEventListener('change', () => setTheme(themeSelectEl.value));
+  }
 
   searchEl.addEventListener('input', onSearchInput);
   typeFilterEl.addEventListener('change', () => {

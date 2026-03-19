@@ -1,40 +1,43 @@
-<!doctype html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html lang="en" data-theme="light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vanilla Dex</title>
-    <script type="module" crossorigin src="/assets/index-CuL6l4Vv.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bcqxjt3I.css">
+    <link rel="stylesheet" crossorigin="" href="/Test.3a06fe2a.css">
   </head>
   <body>
     <header class="topbar">
-      <div class="brand">
-        <h1>The Vanilla Dex</h1>
-        <p class="muted">PokéAPI + Vanilla JS</p>
+      <div class="topbar__row">
+        <div class="brand">
+          <h1>The Vanilla Dex</h1>
+          <p class="muted">PokéAPI + Vanilla JS</p>
+        </div>
+
+        <label class="control">
+          <span class="control__label">Theme</span>
+          <select id="themeSelect" aria-label="Theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
       </div>
 
       <div class="controls" role="group" aria-label="Search and filters">
         <label class="control">
           <span class="control__label">Search</span>
-          <input id="search" type="search" placeholder="e.g. pikachu" autocomplete="off" />
+          <input id="search" type="search" placeholder="e.g. pikachu" autocomplete="off">
         </label>
 
         <label class="control">
           <span class="control__label">Type</span>
           <select id="typeFilter">
-            <option value="all" selected>All</option>
+            <option value="all" selected="">All</option>
           </select>
         </label>
 
         <label class="control control--checkbox">
-          <input id="favoritesOnly" type="checkbox" />
+          <input id="favoritesOnly" type="checkbox">
           <span>Favorites only</span>
         </label>
-
-        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
-          Theme
-        </button>
       </div>
     </header>
 
@@ -69,19 +72,21 @@
         <div id="bottomSentinel" class="sentinel" aria-hidden="true"></div>
 
         <div id="loadingLine" class="loadingLine" aria-live="polite"></div>
-        <div id="emptyState" class="emptyState" hidden>
+        <div id="emptyState" class="emptyState" hidden="">
           No Pokémon found. Try another search.
         </div>
       </section>
     </main>
 
-    <div id="modalOverlay" class="modalOverlay" hidden>
+    <div id="modalOverlay" class="modalOverlay" hidden="">
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <button class="modal__close" id="modalClose" type="button" aria-label="Close">×</button>
         <div id="modalContent" class="modalContent"></div>
       </div>
     </div>
 
-  </body>
-</html>
+    <script type="module" crossorigin="" src="/Test.83a3bb7b.js"></script>
+  
 
+
+</body></html>

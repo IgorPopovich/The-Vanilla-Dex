@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Vanilla Dex</title>
-    <link rel="stylesheet" crossorigin href="dist/assets/index-Bcqxjt3I.css">
+    <link rel="stylesheet" crossorigin href="dist/Test.aa436662.css" />
   </head>
   <body>
     <header class="topbar">
-      <div class="brand">
-        <h1>The Vanilla Dex</h1>
-        <p class="muted">PokéAPI + Vanilla JS</p>
+      <div class="topbar__row">
+        <div class="brand">
+          <h1>The Vanilla Dex</h1>
+          <p class="muted">PokéAPI + Vanilla JS</p>
+        </div>
+
+        <label class="control">
+          <span class="control__label">Theme</span>
+          <select id="themeSelect" aria-label="Theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
       </div>
 
       <div class="controls" role="group" aria-label="Search and filters">
@@ -30,10 +40,6 @@
           <input id="favoritesOnly" type="checkbox" />
           <span>Favorites only</span>
         </label>
-
-        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
-          Theme
-        </button>
       </div>
     </header>
 
@@ -81,7 +87,7 @@
       </div>
     </div>
 
-    <script type="module" crossorigin src="dist/assets/index-CuL6l4Vv.js"></script>
+    <script type="module" crossorigin src="dist/Test.1fcc916e.js"></script>
   </body>
 </html>
 
